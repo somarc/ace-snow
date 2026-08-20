@@ -1,6 +1,6 @@
 # ACE × ServiceNow Field Journal — Direction Lock
 
-Status: **three-plate show pass in progress**. The operator will choose the opening image direction before the visual system is finalized.
+Status: **direction locked for the initial journal release**.
 
 ## Wow-stack provenance
 
@@ -75,7 +75,7 @@ One shared Evidence Core silhouette holds two physically distinct states: source
 
 The Evidence Core is flattened into a contemporary specimen plate with measured cutaways, contact sheets, dated folio leaves, and corrections. Warm technical paper and restrained ink make ongoing research—not nostalgia—the material of the house.
 
-Current recommendation: **C as the journal system, A as its opening cover, and B only for genuine two-system investigations.** Final selection awaits the show pass.
+Launch decision: **C informs the journal system; every generated cover candidate is withheld.** Plate A collapsed into a dark cyber-schematic. Plate D became a bookbinding jig with a stepped trace. Plate E finally read as a physical archive, but its ribbon remained visibly disconnected, its beige paper missed the limestone material law, and the object entered the typography field. The journal therefore launches type-first rather than converting a failed acceptance gate into taste by assertion.
 
 ## Preliminary semantic tokens
 
@@ -87,7 +87,7 @@ These roles come from the successful Trace Oak explainer. Names—not component 
 | `--surface-raised` | `#fffef9` | evidence sheets and figures |
 | `--surface-inverse` | `#17233b` | cover and high-contrast bands |
 | `--text-primary` | `#17233b` | body and headings |
-| `--text-muted` | `#566078` | secondary facts |
+| `--text-secondary` | `#4f5a70` | secondary facts |
 | `--border-subtle` | `#c9c5b8` | rules and measured divisions |
 | `--signal-primary` | `#0f7f76` | the continuous evidence trace |
 | `--signal-review` | `#f2a43a` | checkpoints and review gates |
@@ -95,7 +95,7 @@ These roles come from the successful Trace Oak explainer. Names—not component 
 
 ## Media job
 
-Riverboat/Grok Imagine supplies one authored, poster-first cover still. It does not generate navigation, diagrams, fake interfaces, or decorative images for every entry. Technical models remain semantic HTML/CSS. Motion is out of scope for the initial release.
+Riverboat/Grok Imagine may supply one poster-first cover still only after it passes the producer card at full size, thumbnail size, and in the real hero. No generated still passes that gate for the initial release, so none ships. Generated media never supplies navigation, diagrams, fake interfaces, or decorative images for every entry. Technical models remain semantic HTML/CSS. Motion is out of scope for the initial release.
 
 ## Acceptance gate
 
