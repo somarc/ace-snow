@@ -1,0 +1,36 @@
+# TRUST BOUNDARY: this tracked YAML executes local shell commands.
+# It MUST be invoked with the hidden root --riverboat-gambler flag, reviewed
+# with --dry-run first, and run only in this trusted checkout. Root --commit
+# does not gate shell steps. This pipeline performs no DA write.
+name: ace-journal-grok-imagine-plates
+context:
+  org: somarc
+  repo: ace-snow
+  branch: feat/ace-living-journal
+steps:
+  - id: orientation
+    command: status --format json
+
+  - id: toolchain
+    command: 'test -x "$HOME/.grok/bin/grok" && "$HOME/.grok/bin/grok" --version && command -v magick'
+    depends_on: [orientation]
+    requires_approval: true
+    timeout: 30s
+
+  - id: plate-a
+    command: 'tools/media/capture-plate.sh a'
+    depends_on: [toolchain]
+    requires_approval: true
+    timeout: 20m
+
+  - id: plate-b
+    command: 'tools/media/capture-plate.sh b'
+    depends_on: [plate-a]
+    requires_approval: true
+    timeout: 20m
+
+  - id: plate-c
+    command: 'tools/media/capture-plate.sh c'
+    depends_on: [plate-b]
+    requires_approval: true
+    timeout: 20m

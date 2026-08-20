@@ -7,7 +7,7 @@
     content="script-src 'nonce-aem' 'strict-dynamic' 'unsafe-inline' http: https:; base-uri 'self'; object-src 'none';"
     move-to-http-header="true"
   >
-  <title>Page not found</title>
+  <title>Trace not found | ACE × ServiceNow</title>
   <script nonce="aem" type="text/javascript">
     window.isErrorPage = true;
     window.errorCode = '404';
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="/styles/styles.css">
   <style>
     main.error {
-      min-height: calc(100vh - var(--nav-height));
+      min-height: calc(100dvh - var(--nav-height));
       display: flex;
       align-items: center;
     }
@@ -61,7 +61,8 @@
       <svg viewBox="1 0 38 18" class="error-number">
         <text x="0" y="17">404</text>
       </svg>
-      <h2 class="error-message">Page Not Found</h2>
+      <h1 class="error-message">This trace stops here.</h1>
+      <p>The journal entry may have moved, been superseded, or never reached evidence.</p>
       <p class="button-container">
         <a href="/" class="button secondary error-button-home">Go home</a>
       </p>

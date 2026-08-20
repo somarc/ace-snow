@@ -1,0 +1,241 @@
+/* stylelint-disable no-descending-specificity -- published and mounted Canvas paths intentionally share the same stable role owners. */
+
+.journal-hero {
+  container-type: inline-size;
+  background: var(--surface-inverse-deep);
+  color: var(--text-inverse);
+}
+
+.journal-hero .journal-hero-stage {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--surface-inverse-deep);
+}
+
+.journal-hero .journal-hero-copy {
+  z-index: 2;
+  padding: var(--space-xl) var(--page-gutter);
+  background: var(--surface-inverse-deep);
+}
+
+.journal-hero .journal-hero-copy > p:has(+ h1),
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(+ .prosemirror-editor h1) p {
+  margin: 0;
+  color: #8ed9d1;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.journal-hero .journal-hero-copy h1 {
+  max-inline-size: 11ch;
+  margin-block: var(--space-m) var(--space-s);
+  color: var(--text-inverse);
+  font-size: var(--heading-xl);
+}
+
+.journal-hero .journal-hero-copy p {
+  max-inline-size: 52ch;
+  color: var(--text-inverse-muted);
+  font-size: var(--text-l);
+  line-height: 1.45;
+}
+
+.journal-hero .journal-hero-copy > p:has(> strong > a),
+.journal-hero .journal-hero-copy > p:has(> a > strong),
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) p,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-block-start: var(--space-l);
+}
+
+.journal-hero .journal-hero-copy > p:has(> strong > a) a:any-link,
+.journal-hero .journal-hero-copy > p:has(> a > strong) a:any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) a:any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) a:any-link {
+  min-block-size: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgb(255 255 255 / 38%);
+  border-radius: var(--radius-s);
+  color: var(--text-inverse);
+  font-size: var(--text-s);
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.journal-hero .journal-hero-copy > p:has(> strong > a) > strong > a:any-link,
+.journal-hero .journal-hero-copy > p:has(> a > strong) > a:has(> strong):any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) > [class~="ProseMirror"] > p > strong > a:any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) > [class~="ProseMirror"] > p > a:has(> strong):any-link {
+  border-color: var(--signal-review);
+  background: var(--signal-review);
+  color: var(--palette-ink-deep);
+}
+
+.journal-hero .journal-hero-copy > p:has(> strong > a) a:hover,
+.journal-hero .journal-hero-copy > p:has(> a > strong) a:hover,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) a:hover,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) a:hover {
+  border-color: var(--surface-raised);
+  background: var(--surface-raised);
+  color: var(--palette-ink-deep);
+}
+
+.journal-hero .journal-hero-media {
+  z-index: 0;
+  min-inline-size: 0;
+  overflow: hidden;
+  background: #0c1424;
+}
+
+.journal-hero .journal-hero-media > p,
+.journal-hero .journal-hero-media > .prosemirror-editor,
+.journal-hero .journal-hero-media > .prosemirror-editor > [class~="ProseMirror"] {
+  inline-size: 100%;
+  margin: 0;
+}
+
+.journal-hero .journal-hero-media picture,
+.journal-hero .journal-hero-media img {
+  inline-size: 100%;
+  display: block;
+  margin: 0;
+}
+
+.journal-hero .journal-hero-media img {
+  block-size: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+}
+
+.journal-hero .journal-hero-extra {
+  padding: var(--space-m) var(--page-gutter);
+  border-block-start: 1px solid rgb(255 255 255 / 18%);
+  color: var(--text-inverse-muted);
+}
+
+.journal-hero .journal-hero-extra > :first-child {
+  margin-block-start: 0;
+}
+
+.journal-hero .journal-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  border-block: 1px solid #35415a;
+  background: var(--surface-inverse);
+}
+
+.journal-hero .journal-hero-fact {
+  min-inline-size: 0;
+  padding: var(--space-m) var(--page-gutter);
+  border-block-end: 1px solid #35415a;
+}
+
+.journal-hero .journal-hero-fact p {
+  margin: 0;
+  color: var(--text-inverse-muted);
+  font-size: var(--text-s);
+  line-height: 1.35;
+}
+
+.journal-hero .journal-hero-fact strong {
+  color: var(--signal-review);
+  font-family: var(--font-mono);
+  font-size: var(--heading-s);
+}
+
+@container (width >= 60rem) {
+  .journal-hero .journal-hero-stage {
+    min-block-size: clamp(30rem, 42cqi, 42rem);
+  }
+
+  .journal-hero.journal-hero-has-media .journal-hero-stage {
+    min-block-size: clamp(38rem, 56.25cqi, 52rem);
+  }
+
+  .journal-hero .journal-hero-stage::after {
+    content: "";
+    z-index: 1;
+    grid-area: 1 / 1;
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, rgb(13 22 40 / 96%) 0%, rgb(13 22 40 / 88%) 32%, rgb(13 22 40 / 32%) 58%, transparent 78%),
+      linear-gradient(0deg, rgb(13 22 40 / 45%), transparent 52%);
+  }
+
+  .journal-hero .journal-hero-copy,
+  .journal-hero .journal-hero-media {
+    grid-area: 1 / 1;
+  }
+
+  .journal-hero .journal-hero-copy {
+    align-self: end;
+    inline-size: min(58%, 52rem);
+    padding-block: var(--space-2xl);
+    background: transparent;
+  }
+
+  .journal-hero:not(.journal-hero-has-media) .journal-hero-copy {
+    inline-size: min(100%, 64rem);
+  }
+
+  .journal-hero .journal-hero-media,
+  .journal-hero .journal-hero-media > p,
+  .journal-hero .journal-hero-media > .prosemirror-editor,
+  .journal-hero .journal-hero-media > .prosemirror-editor > [class~="ProseMirror"],
+  .journal-hero .journal-hero-media picture,
+  .journal-hero .journal-hero-media img {
+    block-size: 100%;
+  }
+
+  .journal-hero .journal-hero-media img {
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .journal-hero .journal-hero-fact {
+    padding-inline: var(--page-gutter);
+    border-block-end: 0;
+    border-inline-start: 1px solid #35415a;
+  }
+
+  .journal-hero .journal-hero-fact:first-child {
+    border-inline-start: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .journal-hero,
+  .journal-hero .journal-hero-stage,
+  .journal-hero .journal-hero-copy,
+  .journal-hero .journal-hero-facts {
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  .journal-hero .journal-hero-copy h1,
+  .journal-hero .journal-hero-copy p,
+  .journal-hero .journal-hero-fact p,
+  .journal-hero .journal-hero-fact strong {
+    color: CanvasText;
+  }
+
+  .journal-hero .journal-hero-copy a:any-link,
+  .journal-hero .journal-hero-fact {
+    border-color: CanvasText;
+    background: Canvas;
+    color: LinkText;
+  }
+}

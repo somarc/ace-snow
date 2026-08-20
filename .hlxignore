@@ -5,3 +5,6 @@ LICENSE
 package.json
 package-lock.json
 test/*
+pipelines/*
+media/briefs/*
+tools/media/*

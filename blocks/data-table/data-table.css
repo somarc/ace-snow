@@ -1,0 +1,72 @@
+.data-table {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-small);
+  overscroll-behavior-inline: contain;
+}
+
+.data-table .data-table-element {
+  inline-size: 100%;
+  min-inline-size: 44rem;
+  display: table;
+  margin: 0;
+  overflow: visible;
+  border: 0;
+  border-collapse: collapse;
+  box-shadow: none;
+}
+
+.data-table .data-table-element th,
+.data-table .data-table-element td {
+  min-inline-size: 0;
+  padding: var(--space-s) var(--space-m);
+  border-block-end: 1px solid var(--border-subtle);
+  text-align: start;
+  vertical-align: top;
+}
+
+.data-table .data-table-element th {
+  background: var(--surface-recessed);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.data-table .data-table-element tbody tr:last-child td {
+  border-block-end: 0;
+}
+
+.data-table .data-table-element p,
+.data-table .data-table-element .prosemirror-editor,
+.data-table .data-table-element [class~="ProseMirror"] {
+  margin-block: 0;
+}
+
+.data-table .data-table-element tbody tr:hover td {
+  background: color-mix(in srgb, var(--signal-primary-soft), transparent 55%);
+}
+
+@media (forced-colors: active) {
+  .data-table,
+  .data-table .data-table-element th,
+  .data-table .data-table-element td {
+    border-color: CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+}
+
+@media print {
+  .data-table {
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .data-table .data-table-element {
+    min-inline-size: 0;
+  }
+}

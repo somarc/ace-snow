@@ -1,1 +1,167 @@
-/* add global styles that can be loaded post LCP here */
+/* Below-LCP prose, data-table, and print treatment. */
+
+main > .section .default-content-wrapper > table {
+  inline-size: 100%;
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: var(--surface-raised);
+  box-shadow: 0 0 0 1px var(--border-subtle);
+  white-space: normal;
+}
+
+main > .section .default-content-wrapper > table :is(thead, tbody, tr) {
+  inline-size: 100%;
+}
+
+main > .section .default-content-wrapper > table :is(th, td) {
+  min-inline-size: 10rem;
+  padding: 0.75rem 0.9rem;
+  border-block-end: 1px solid var(--border-subtle);
+  text-align: start;
+  vertical-align: top;
+}
+
+main > .section .default-content-wrapper > table th {
+  background: var(--surface-recessed);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+main > .section .default-content-wrapper > table tbody tr:last-child td {
+  border-block-end: 0;
+}
+
+details {
+  margin-block-start: var(--space-m);
+  padding: var(--space-s) var(--space-m);
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-raised);
+}
+
+summary {
+  min-block-size: 2.75rem;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main.error,
+body.error-page main.error {
+  min-block-size: calc(100dvh - var(--nav-height));
+  display: grid;
+  place-items: center;
+  padding: var(--page-gutter);
+}
+
+main.error .section {
+  inline-size: min(100%, 48rem);
+  padding: var(--space-xl);
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-raised);
+  text-align: center;
+}
+
+main.error .error-number {
+  inline-size: 100%;
+  max-block-size: 18rem;
+  fill: var(--surface-inverse);
+}
+
+main.error .error-number text {
+  font-family: var(--font-display);
+}
+
+@media print {
+  :root {
+    --surface-page: #fff;
+    --surface-raised: #fff;
+    --surface-recessed: #fff;
+    --surface-inverse: #fff;
+    --surface-inverse-deep: #fff;
+    --text-primary: #000;
+    --text-secondary: #222;
+    --text-inverse: #000;
+    --text-inverse-muted: #222;
+    --border-subtle: #777;
+    --action-primary: #000;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+
+  body {
+    display: block;
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+  }
+
+  header,
+  footer,
+  .skip-link,
+  .nav-menu {
+    display: none;
+  }
+
+  main > .section,
+  main > .section.ace-cover,
+  main > .section.ace-now,
+  main > .section.ace-ledger,
+  main > .section.ace-evidence,
+  main > .section.ace-inverse,
+  main > .section.ace-entry-lead {
+    padding-block: 8mm;
+    border-color: #777;
+    background: #fff;
+    color: #000;
+    break-inside: auto;
+  }
+
+  main > .section > div {
+    max-inline-size: none;
+    padding-inline: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  blockquote,
+  main > .section .default-content-wrapper > table,
+  .data-table .data-table-element,
+  pre {
+    break-inside: avoid;
+  }
+
+  a:any-link {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    overflow-wrap: anywhere;
+  }
+
+  pre {
+    border: 1px solid #777;
+    background: #fff;
+    color: #000;
+    white-space: pre-wrap;
+  }
+
+  main > .section .default-content-wrapper > table,
+  .data-table .data-table-element {
+    display: table;
+    overflow: visible;
+    box-shadow: 0 0 0 1px #777;
+  }
+}
