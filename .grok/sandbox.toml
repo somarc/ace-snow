@@ -1,0 +1,11 @@
+[profiles.ace-journal-media]
+extends = "read-only"
+restrict_network = true
+deny = [
+  "/Users/mhess/.ssh",
+  "/Users/mhess/.config/gh",
+  "/Users/mhess/.aem",
+  "**/.env",
+  "**/*.pem",
+  "**/*.key",
+]
