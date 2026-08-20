@@ -47,7 +47,9 @@
 }
 
 .journal-hero .journal-hero-copy > p:has(> strong > a),
-.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) p {
+.journal-hero .journal-hero-copy > p:has(> a > strong),
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) p,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) p {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
@@ -55,7 +57,9 @@
 }
 
 .journal-hero .journal-hero-copy > p:has(> strong > a) a:any-link,
-.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) a:any-link {
+.journal-hero .journal-hero-copy > p:has(> a > strong) a:any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) a:any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) a:any-link {
   min-block-size: 2.75rem;
   display: inline-flex;
   align-items: center;
@@ -69,15 +73,19 @@
   text-decoration: none;
 }
 
-.journal-hero .journal-hero-copy > p > strong > a:any-link,
-.journal-hero .journal-hero-copy > .prosemirror-editor > [class~="ProseMirror"] > p > strong > a:any-link {
+.journal-hero .journal-hero-copy > p:has(> strong > a) > strong > a:any-link,
+.journal-hero .journal-hero-copy > p:has(> a > strong) > a:has(> strong):any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) > [class~="ProseMirror"] > p > strong > a:any-link,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) > [class~="ProseMirror"] > p > a:has(> strong):any-link {
   border-color: var(--signal-review);
   background: var(--signal-review);
   color: var(--palette-ink-deep);
 }
 
 .journal-hero .journal-hero-copy > p:has(> strong > a) a:hover,
-.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) a:hover {
+.journal-hero .journal-hero-copy > p:has(> a > strong) a:hover,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > strong > a) a:hover,
+.journal-hero .journal-hero-copy > .prosemirror-editor:has(> [class~="ProseMirror"] > p > a > strong) a:hover {
   border-color: var(--surface-raised);
   background: var(--surface-raised);
   color: var(--palette-ink-deep);

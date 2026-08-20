@@ -8,7 +8,7 @@ const canonicalMarkup = `
   <div class="journal-hero block" data-block-index="4">
     <div>
       <div><p data-prose-index="0"><picture><img data-image-index="0" src="/media/core.webp" alt="Evidence core"></picture></p></div>
-      <div><h1 data-prose-index="1">Follow the trace.</h1><p data-prose-index="2">A living field journal.</p><p data-prose-index="3"><a href="/journal/asset-identity">Read the latest finding</a></p></div>
+      <div><h1 data-prose-index="1">Follow the trace.</h1><p data-prose-index="2">A living field journal.</p><p data-prose-index="3"><a href="/journal/asset-identity"><strong>Read the latest finding</strong></a></p></div>
     </div>
     <div>
       <div><p data-prose-index="4">6 client needs</p></div>
