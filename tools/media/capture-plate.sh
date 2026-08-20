@@ -4,14 +4,18 @@ umask 077
 
 plate="${1:-}"
 case "$plate" in
-  a|b|c) ;;
-  *) printf 'Usage: %s <a|b|c>\n' "$0" >&2; exit 64 ;;
+  a|b|c|d) ;;
+  *) printf 'Usage: %s <a|b|c|d>\n' "$0" >&2; exit 64 ;;
 esac
 
 repo="$(git rev-parse --show-toplevel)"
 cd "$repo"
 
-pipeline='pipelines/ace-grok-imagine-plates.yaml'
+if [[ "$plate" == 'd' ]]; then
+  pipeline='pipelines/ace-grok-imagine-cover.yaml'
+else
+  pipeline='pipelines/ace-grok-imagine-plates.yaml'
+fi
 self='tools/media/capture-plate.sh'
 prompt="media/briefs/ace-journal-plate-${plate}.md"
 grok_link="$HOME/.grok/bin/grok"
