@@ -17,8 +17,8 @@ steps:
     requires_approval: true
     timeout: 30s
 
-  - id: cover-refinement
-    command: 'tools/media/capture-plate.sh d'
+  - id: cover-final
+    command: 'tools/media/capture-plate.sh e'
     depends_on: [toolchain]
     requires_approval: true
     timeout: 20m
