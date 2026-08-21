@@ -1,6 +1,37 @@
 # ACE × ServiceNow Field Journal — Direction Lock
 
-Status: **direction locked for the initial journal release**.
+Status: **Evidence Ledger direction locked for COMPILE**.
+
+## Evidence Ledger lock — revision 01
+
+- Decision maker: site owner, through the Studio direction gate
+- Locked: 2026-08-21
+- Visual source of truth: managed artifact `a_d06c6b87fc62928cc122`
+- Approved MODEL: managed artifact `a_d0d497970301c43c92a2`
+
+The next visual evolution is **The Evidence Ledger — one continuous proof
+line**. It keeps the initial field-journal thesis and makes the Evidence Core
+perceptible through one trace joining the opening claim, latest evidence,
+Signal → Boundary → Evidence → Decision → Next, and the chronological ledger.
+
+Locked invariants:
+
+- `ACE-D01` — one proof line;
+- `ACE-D02` — evidence enters viewport one;
+- `ACE-D03` — chronology is a ledger;
+- `ACE-D04` — material before effects;
+- `ACE-D05` — state has disciplined color;
+- `ACE-D06` — absence is honest;
+- `ACE-D07` — narrow view is re-authored;
+- `ACE-D08` — motion follows inquiry.
+
+The approved EDS model extends `Journal Hero` through the explicit
+`Evidence Ledger` variant rather than adding generalized dossier, trace, or
+card blocks. The first authored row contains the claim and current dossier;
+the second contains the five evidence stages. `Journal Feed` remains the
+chronological ledger. Section composition owns full bleed, exterior rhythm,
+and registration between the cover and ledger; blocks own only their bounded
+internals.
 
 ## Wow-stack provenance
 

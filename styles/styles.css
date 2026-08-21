@@ -11,7 +11,7 @@
   --palette-paper: #f5f3eb;
   --palette-paper-deep: #e8e4d9;
   --palette-white: #fffef9;
-  --palette-teal: #0f7f76;
+  --palette-teal: #0e776f;
   --palette-teal-dark: #0b625c;
   --palette-teal-soft: #dcefeb;
   --palette-amber: #f2a43a;
@@ -47,6 +47,7 @@
   /* Type roles. */
   --font-body: roboto, roboto-fallback, ui-sans-serif, system-ui, sans-serif;
   --font-display: roboto-condensed, roboto-condensed-fallback, "Arial Narrow", sans-serif;
+  --font-editorial: georgia, "Times New Roman", serif;
   --font-mono: "SFMono-Regular", consolas, "Liberation Mono", menlo, monospace;
   --text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.82rem);
   --text-s: clamp(0.88rem, 0.84rem + 0.18vw, 0.98rem);
@@ -415,6 +416,17 @@ main > .section.ace-cover > .journal-hero-wrapper {
   padding-inline: 0;
 }
 
+main > .section.ace-cover.evidence-ledger-cover {
+  position: relative;
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+main > .section.ace-cover.evidence-ledger-cover > .journal-hero-wrapper {
+  max-inline-size: calc(var(--measure-wide) + (2 * var(--page-gutter)));
+  padding-inline: var(--page-gutter);
+}
+
 main > .section.ace-now {
   border-block: 1px solid #dfbe83;
   background: var(--signal-review-soft);
@@ -479,8 +491,26 @@ main > .section.ace-guides h3 {
 }
 
 main > .section.ace-ledger {
+  --evidence-trace-inset: max(var(--page-gutter), calc((100% - var(--measure-wide)) / 2));
+
+  position: relative;
   border-block: 1px solid var(--border-subtle);
-  background: var(--surface-recessed);
+  background: var(--surface-page);
+}
+
+main > .section.ace-ledger::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: var(--evidence-trace-inset);
+  inline-size: 0.2rem;
+  background: var(--signal-primary);
+  pointer-events: none;
+}
+
+main > .section.ace-ledger > .default-content-wrapper {
+  position: relative;
+  padding-inline-start: calc(var(--page-gutter) + var(--space-l));
 }
 
 main > .section.ace-guides {
@@ -624,6 +654,10 @@ body.journal-method main > .section:last-of-type {
     border: 1px solid CanvasText;
     background: Canvas;
     color: CanvasText;
+  }
+
+  main > .section.ace-ledger::before {
+    background: Highlight;
   }
 
   main > .section.ace-entry-lead::before {
