@@ -120,6 +120,66 @@ Contract:
 - The decorator adds classes only. It never replaces, clones, or moves authored fields or images.
 - On narrow viewports, copy and media remain separate flow regions and the 16:9 cover remains uncropped. On wide viewports, the copy may overlay the authored type-safe field. Do not change this to a centered portrait `cover` crop.
 
+### Evidence Ledger variant
+
+Choose `Journal Hero (Evidence Ledger)` for the locked homepage composition.
+Do not use this variant as a generic hero or card layout.
+
+Authored shape:
+
+| Journal Hero (Evidence Ledger) | |
+| --- | --- |
+| Claim | Latest evidence dossier |
+| Signal | Boundary | Evidence | Decision | Next |
+
+The claim cell requires exactly one H1 and a deck. It may also contain the
+eyebrow and ordinary CTA links described above.
+
+The latest evidence dossier requires:
+
+- authored date;
+- entry type and text-visible status;
+- linked H2 entry title;
+- one-sentence finding;
+- concise Boundary, Evidence, Decision, and Next facts;
+- optional systems/workstream;
+- optional approved media with useful alt text.
+
+The dossier image is omitted entirely until it passes the documented media
+gate. Never author or generate a placeholder, empty media frame, stock image,
+or synthetic fallback.
+
+The second row contains exactly five cells in canonical order: Signal,
+Boundary, Evidence, Decision, and Next. Each cell contains an authored strong
+label and a concise current-investigation example. The decorator may add one
+separate five-button control group that changes only emphasis and announces
+the selected step. It never moves, clones, wraps, hides, or replaces the five
+authored cells. Without JavaScript, all five explanations remain visible in
+source order.
+
+If the method row is missing, extra, reordered, or malformed, keep all
+authored content visible and omit the generated controls rather than
+inventing or mislabeling stages. If Canvas replaces the block's inner DOM,
+decoration must remove stale controls and rebuild exactly one valid group.
+During in-place Canvas edits, the generated controls revalidate against the
+authored labels; malformed labels remove the controls until the canonical
+five-stage sequence is restored.
+
+Homepage source order for this direction is:
+
+1. `ace-cover, evidence-ledger-cover` with the hero variant (the comma is
+   required so DA serializes two section classes rather than one combined
+   `ace-cover-evidence-ledger-cover` class);
+2. `ace-ledger` with the complete current-first `Journal Feed`;
+3. `ace-threads`;
+4. `ace-guides`;
+5. `ace-inverse` method close.
+
+The current dossier entry deliberately repeats as the first ledger row. Keep
+its date, status, linked title, finding, workstream, and systems synchronized
+during every journal update. The prior numeric cover facts are not part of
+this variant because manually maintained counts can become misleading.
+
 ## Journal Feed block
 
 The `Journal Feed` block is an authored chronological ledger. Append one row for each visible entry.

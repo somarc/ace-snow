@@ -106,7 +106,8 @@ main.error .error-number text {
   header,
   footer,
   .skip-link,
-  .nav-menu {
+  .nav-menu,
+  .journal-hero.evidence-ledger .journal-hero-step-controls {
     display: none;
   }
 
